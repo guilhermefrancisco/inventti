@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\customers.Domain\customers.Domain.csproj" />
+    <ProjectReference Include="..\customers.Infra.CrossCutting\customers.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\customers.Services\customers.Service.csproj" />
+  </ItemGroup>
+
+
+</Project>
