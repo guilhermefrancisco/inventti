@@ -18,6 +18,7 @@ namespace customers.Application
 
             services.AddContextDependency();
             services.AddRepositoryDependency();
+            services.AddServiceDependency();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
