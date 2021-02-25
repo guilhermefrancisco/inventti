@@ -1,7 +1,5 @@
 ﻿using customers.Domain.Entities;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace customers.Domain.Interfaces
 {
