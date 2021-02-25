@@ -10,10 +10,12 @@ namespace customers.Service.Services
     {
         private readonly IRepositoryCustomer _repositoryCustomer;
 
-        public void Delete(int id)
+        public CustomerService(IRepositoryCustomer repositoryCustomer)
         {
-            throw new NotImplementedException();
+            _repositoryCustomer = repositoryCustomer;
         }
+
+        public void Delete(int id) => _repositoryCustomer.Remove(id);
 
         public CustomerDTO Insert(CreateCustomerDTO createCustomer)
         {
@@ -22,7 +24,8 @@ namespace customers.Service.Services
 
         public IEnumerable<CustomerDTO> RecoverAll()
         {
-            throw new NotImplementedException();
+            var customers = _repositoryCustomer.GetAll();
+
         }
 
         public CustomerDTO RecoverById(int id)
