@@ -7,7 +7,7 @@ namespace customers.Infra.CrossCutting.AutoMapper
 {
     public static class AutoMapperCustomer
     {
-        public static void AddAutoMapper(this IServiceCollection services)
+        public static void AddAutoMapperCustomer(this IServiceCollection services)
         {
             var mapperConfig = new MapperConfiguration(config =>
             {

@@ -1,3 +1,4 @@
+using customers.Infra.CrossCutting.AutoMapper;
 using customers.Infra.CrossCutting.InversionOfControl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -19,6 +20,7 @@ namespace customers.Application
             services.AddContextDependency();
             services.AddRepositoryDependency();
             services.AddServiceDependency();
+            services.AddAutoMapperCustomer();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
