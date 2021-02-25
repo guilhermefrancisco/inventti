@@ -1,10 +1,7 @@
 ﻿using customers.Domain.DTOs;
-using customers.Domain.Entities;
 using customers.Domain.Interfaces;
-using customers.Infra.Data.Context;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Linq;
 
 namespace customers.Application.Controllers
 {
@@ -16,6 +13,7 @@ namespace customers.Application.Controllers
         public CustomerController(IServiceCustomer serviceCustomer) => _serviceCustomer = serviceCustomer;
 
         [HttpPost]
+        [Route("Insert")]
         public IActionResult Create([FromBody]CreateCustomerDTO createCustomer)
         {
             try
@@ -30,12 +28,39 @@ namespace customers.Application.Controllers
             }            
         }
 
+        [HttpGet("{id}")]
+        public IActionResult RecoverById([FromRoute]int id)
+        {
+            try
+            {
+                return Ok(_serviceCustomer.RecoverById(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         [HttpGet]
         public IActionResult RecoverAll()
         {
             try
             {
                 return Ok(_serviceCustomer.RecoverAll());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete([FromRoute]int id)
+        {
+            try
+            {
+                _serviceCustomer.Delete(id);
+                return Ok();
             }
             catch (Exception e)
             {

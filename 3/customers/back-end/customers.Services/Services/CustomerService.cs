@@ -29,19 +29,16 @@ namespace customers.Service.Services
             return _mapper.Map<Customer, CustomerDTO>(customer);
         }
 
-        public IEnumerable<CustomerDTO> RecoverAll()
-        {
-            return _mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerDTO>>(_repositoryCustomer.GetAll());
-        }
+        public IEnumerable<CustomerDTO> RecoverAll() => _mapper.Map<IEnumerable<Customer>, IEnumerable<CustomerDTO>>(_repositoryCustomer.GetAll());
 
-        public CustomerDTO RecoverById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public CustomerDTO RecoverById(int id) => _mapper.Map<Customer, CustomerDTO>(_repositoryCustomer.GetById(id));
 
         public CustomerDTO Update(UpdateCustomerDTO updateCustomer)
         {
-            throw new NotImplementedException();
+            var customer = _mapper.Map<UpdateCustomerDTO, Customer>(updateCustomer);
+            _repositoryCustomer.Save(customer);
+
+            return _mapper.Map<Customer, CustomerDTO>(customer);
         }
     }
 }
