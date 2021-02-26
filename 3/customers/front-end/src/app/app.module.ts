@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer/customer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatButtonModule} from '@angular/material/button';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,8 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatButtonModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
