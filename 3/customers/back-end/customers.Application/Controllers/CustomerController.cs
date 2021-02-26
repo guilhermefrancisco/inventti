@@ -18,9 +18,17 @@ namespace customers.Application.Controllers
         {
             try
             {
-                _serviceCustomer.Insert(createCustomer);
+                if (ModelState.IsValid)
+                {
+                    _serviceCustomer.Insert(createCustomer);
 
-                return Ok();
+                    return Ok();
+                }
+                else
+                {
+                    return BadRequest();
+                }
+
             }
             catch (Exception e)
             {
@@ -61,6 +69,19 @@ namespace customers.Application.Controllers
             {
                 _serviceCustomer.Delete(id);
                 return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult Update([FromBody]UpdateCustomerDTO updateCustomer)
+        {
+            try
+            {
+                return Ok(_serviceCustomer.Update(updateCustomer));
             }
             catch (Exception e)
             {

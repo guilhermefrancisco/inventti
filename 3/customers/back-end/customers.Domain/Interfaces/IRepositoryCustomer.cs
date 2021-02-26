@@ -8,6 +8,7 @@ namespace customers.Domain.Interfaces
         void Save(Customer customer);
         void Remove(int id);
         Customer GetById(int id);
+        Customer GetByName(string name);
         IList<Customer> GetAll();
     }
 }

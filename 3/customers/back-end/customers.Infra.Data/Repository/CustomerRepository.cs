@@ -2,6 +2,7 @@
 using customers.Domain.Interfaces;
 using customers.Infra.Data.Context;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace customers.Infra.Data.Repository
 {
@@ -10,6 +11,7 @@ namespace customers.Infra.Data.Repository
         public CustomerRepository(CustomersContext customersContext) : base(customersContext) { }
         public IList<Customer> GetAll() => base.Select();
         public Customer GetById(int id) => base.Select(id);
+        public Customer GetByName(string name) => _customersContext.Customers.Where(x => x.Name == name).FirstOrDefault();
         public void Remove(int id) => base.Delete(id);
 
         public void Save(Customer customer)

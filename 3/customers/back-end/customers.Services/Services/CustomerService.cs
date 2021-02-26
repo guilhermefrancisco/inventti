@@ -35,8 +35,8 @@ namespace customers.Service.Services
 
         public CustomerDTO Update(UpdateCustomerDTO updateCustomer)
         {
-            var customer = _mapper.Map<UpdateCustomerDTO, Customer>(updateCustomer);
-            _repositoryCustomer.Save(customer);
+            var customer = _repositoryCustomer.GetById(updateCustomer.Id);
+            _repositoryCustomer.Save(_mapper.Map<UpdateCustomerDTO, Customer>(updateCustomer, customer));
 
             return _mapper.Map<Customer, CustomerDTO>(customer);
         }

@@ -1,5 +1,7 @@
+using customers.Domain.Validators;
 using customers.Infra.CrossCutting.AutoMapper;
 using customers.Infra.CrossCutting.InversionOfControl;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -15,7 +17,10 @@ namespace customers.Application
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(x =>
+            {
+                x.RegisterValidatorsFromAssembly(typeof(CreateCustomerCommandValidator).Assembly);
+            });
 
             services.AddContextDependency();
             services.AddRepositoryDependency();

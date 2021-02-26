@@ -9,6 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\customers.Domain\customers.Domain.csproj" />
     <ProjectReference Include="..\customers.Infra.CrossCutting\customers.Infra.CrossCutting.csproj" />
     <ProjectReference Include="..\customers.Services\customers.Service.csproj" />
