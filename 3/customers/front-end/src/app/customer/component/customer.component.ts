@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 
 import { Customer } from '../dto/customer';
+import { updateCustomer } from '../dto/updateCustumer';
 import { CustomerService } from '../services/customer.service';
 
 @Component({
@@ -11,11 +13,13 @@ import { CustomerService } from '../services/customer.service';
 })
 export class CustomerComponent implements OnInit {
 
-  displayedColumns : string[] = ['name', 'birthdate'];
+  updateCustomer! : updateCustomer;
+
+  displayedColumns : string[] = ['name', 'birthdate', 'delete', 'redirectUpdate'];
   columnsToDisplay: string[] = this.displayedColumns.slice();
   dataSource = new MatTableDataSource<Customer>();
 
-  constructor(private service: CustomerService) { }
+  constructor(private service: CustomerService, private router: Router) { }
 
   ngOnInit(): void {
     this.getAllCustomers();
@@ -26,6 +30,17 @@ export class CustomerComponent implements OnInit {
       .subscribe(res => {
         this.dataSource.data = res;
       })
+  }
+
+  delete(id : number){
+    return this.service.remove(id)
+    .subscribe(res =>{
+      this.getAllCustomers();
+    })
+  }
+
+  redirectUpdate(id : number){
+    this.router.navigate(['update', id]);
   }
 
 }

@@ -21,11 +21,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
 
 import { RegisterComponent } from './customer/component/register/register.component';
+import { UpdateComponent } from './customer/component/update/update.component';
 
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,7 @@ import {MatCardModule} from '@angular/material/card';
     CustomerComponent,
     MenuComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,7 @@ import {MatCardModule} from '@angular/material/card';
     MatTableModule,
     MatCardModule,
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

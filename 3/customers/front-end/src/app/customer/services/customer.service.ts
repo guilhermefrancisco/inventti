@@ -33,4 +33,10 @@ export class CustomerService extends BaseService {
       catchError(super.serviceError))
   }
 
+  remove(id : number): Observable<{}>{
+    return this.http.delete(this.urlCustomer + id, super.httpHeader)
+    .pipe(
+      catchError(super.serviceError))
+  }
+
 }
