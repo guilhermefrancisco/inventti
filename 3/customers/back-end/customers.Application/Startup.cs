@@ -17,10 +17,17 @@ namespace customers.Application
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers().AddFluentValidation(x =>
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+                options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                options.JsonSerializerOptions.MaxDepth = int.MaxValue;
+            }).AddFluentValidation(x =>
             {
                 x.RegisterValidatorsFromAssembly(typeof(CreateCustomerCommandValidator).Assembly);
             });
+
+            services.AddCors();
 
             services.AddContextDependency();
             services.AddRepositoryDependency();
@@ -30,6 +37,8 @@ namespace customers.Application
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(opt => opt.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
