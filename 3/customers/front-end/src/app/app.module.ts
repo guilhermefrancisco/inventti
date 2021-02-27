@@ -14,10 +14,18 @@ import { HomeComponent } from './navigation/home/home.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+
+import {MatTableModule} from '@angular/material/table';
+
 import { RegisterComponent } from './customer/component/register/register.component';
 
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -35,8 +43,14 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatDatepickerModule,
     FormsModule,
-    ReactiveFormsModule
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatTableModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

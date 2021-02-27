@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CreateCustomer } from '../../dto/createCustomer';
 
+import { CreateCustomer } from '../../dto/createCustomer';
 import { CustomerService } from '../../services/customer.service';
 
 @Component({
@@ -21,9 +21,11 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     let name = new FormControl();
+    let birthdate = new FormControl();
 
     this.customerForm = this.fb.group({
-      name : name
+      name : name,
+      birthdate : birthdate
     });
   }
 
