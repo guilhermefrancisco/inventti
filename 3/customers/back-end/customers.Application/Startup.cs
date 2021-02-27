@@ -33,6 +33,8 @@ namespace customers.Application
             services.AddRepositoryDependency();
             services.AddServiceDependency();
             services.AddAutoMapperCustomer();
+
+            services.AddSwaggerDependency();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,6 +51,8 @@ namespace customers.Application
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwaggerDependency();
 
             app.UseEndpoints(endpoints =>
             {
