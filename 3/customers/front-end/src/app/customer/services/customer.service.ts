@@ -39,4 +39,10 @@ export class CustomerService extends BaseService {
       catchError(super.serviceError))
   }
 
+  getById(id : number): Observable<Customer>{
+    return this.http.get<Customer>(this.urlCustomer + id, super.httpHeader)
+    .pipe(
+      catchError(super.serviceError))
+  }
+
 }
