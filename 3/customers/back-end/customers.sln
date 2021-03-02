@@ -15,15 +15,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{48E7E6EB-9FA4-4E55-A58D-1DFE894E56EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "customers.Application", "customers.Application\customers.Application.csproj", "{7B295E6A-C5C3-4233-9DB4-83310AB676D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "customers.Application", "customers.Application\customers.Application.csproj", "{7B295E6A-C5C3-4233-9DB4-83310AB676D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "customers.Domain", "customers.Domain\customers.Domain.csproj", "{58AF2EFD-FB9D-4A63-AA76-C226AA2F3EB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "customers.Domain", "customers.Domain\customers.Domain.csproj", "{58AF2EFD-FB9D-4A63-AA76-C226AA2F3EB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "customers.Service", "customers.Services\customers.Service.csproj", "{DE78FB2A-8A04-4C97-B4E5-E5D2C063AC1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "customers.Service", "customers.Services\customers.Service.csproj", "{DE78FB2A-8A04-4C97-B4E5-E5D2C063AC1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "customers.Infra.Data", "customers.Infra.Data\customers.Infra.Data.csproj", "{C8AEBFE0-1D26-498F-B05C-155B0678EC0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "customers.Infra.Data", "customers.Infra.Data\customers.Infra.Data.csproj", "{C8AEBFE0-1D26-498F-B05C-155B0678EC0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "customers.Infra.CrossCutting", "customers.Infra.CrossCutting\customers.Infra.CrossCutting.csproj", "{86106CB7-875E-4308-A3FC-992A45B78A07}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "customers.Infra.CrossCutting", "customers.Infra.CrossCutting\customers.Infra.CrossCutting.csproj", "{86106CB7-875E-4308-A3FC-992A45B78A07}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{7A99EDAD-E817-4C1D-AC48-BBE9C81B8C34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "customer.Tests", "customer.Tests\customer.Tests.csproj", "{793C3F72-77E3-4BE6-9F26-6C519F8D231A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{86106CB7-875E-4308-A3FC-992A45B78A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86106CB7-875E-4308-A3FC-992A45B78A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86106CB7-875E-4308-A3FC-992A45B78A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{793C3F72-77E3-4BE6-9F26-6C519F8D231A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793C3F72-77E3-4BE6-9F26-6C519F8D231A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793C3F72-77E3-4BE6-9F26-6C519F8D231A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793C3F72-77E3-4BE6-9F26-6C519F8D231A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +71,7 @@ Global
 		{DE78FB2A-8A04-4C97-B4E5-E5D2C063AC1F} = {B0CA7F5D-7262-47FF-949B-2B96B28596AD}
 		{C8AEBFE0-1D26-498F-B05C-155B0678EC0A} = {8D13CD68-3D38-45FF-A0C8-092E64313C76}
 		{86106CB7-875E-4308-A3FC-992A45B78A07} = {48E7E6EB-9FA4-4E55-A58D-1DFE894E56EF}
+		{793C3F72-77E3-4BE6-9F26-6C519F8D231A} = {7A99EDAD-E817-4C1D-AC48-BBE9C81B8C34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0E2996EC-FFE6-4DE5-86C9-078E40775CEA}
